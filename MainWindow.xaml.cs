@@ -51,6 +51,30 @@ namespace Suciu_Bogdan_Lab2
             myDoughnutMachine.MakeDoughnuts(DoughnutType.Sugar);
         }
 
+        private void lemonToolStripMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            lemonToolStripMenuItem.IsChecked = true;
+            chocolateToolStripMenuItem.IsChecked = false;
+            vanillaToolStripMenuItem.IsChecked = false;
+            myDoughnutMachine.MakeDoughnuts(DoughnutType.Lemon);
+        }
+
+        private void chocolateToolStripMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            lemonToolStripMenuItem.IsChecked = false;
+            chocolateToolStripMenuItem.IsChecked = true;
+            vanillaToolStripMenuItem.IsChecked = false;
+            myDoughnutMachine.MakeDoughnuts(DoughnutType.Chocolate);
+        }
+
+        private void vanillaToolStripMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            lemonToolStripMenuItem.IsChecked = false;
+            chocolateToolStripMenuItem.IsChecked = false;
+            vanillaToolStripMenuItem.IsChecked = true;
+            myDoughnutMachine.MakeDoughnuts(DoughnutType.Vanilla);
+        }
+
         private void stopToolStripMenuItem_Click(object sender, RoutedEventArgs e)
         {
             myDoughnutMachine.Enabled = false;
@@ -83,7 +107,19 @@ namespace Suciu_Bogdan_Lab2
                     mRaisedSugar++;
                     txtSugarRaised.Text = mRaisedSugar.ToString();
                     break;
-                    //...
+                case DoughnutType.Lemon:
+                    mFilledLemon++;
+                    txtLemonFilled.Text = mFilledLemon.ToString();
+                    break;
+                case DoughnutType.Chocolate:
+                    mFilledChocolate++;
+                    txtChocolateFilled.Text = mFilledChocolate.ToString();
+                    break;
+                case DoughnutType.Vanilla:
+                    mFilledVanilla++;
+                    txtVanillaFilled.Text = mFilledVanilla.ToString();
+                    break;
+
             }
         }
 
